@@ -1,0 +1,15 @@
+{
+  "name": "CDLTA Tracker",
+  "short_name": "CDLTA Tracker",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f0f10",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABqUlEQVR4nO2aO07DMBRFv0nQGJzGQpW0lQqkA8wA2QGZgB0wA2QGZgB0wA2QGZgB0wA2QGZgCq0rVYq3kJtSx2m0mQm0y8hW+2o1m0b8mQ8mYf8gkEAAf1gkZbQn8t8B1wZg5wQ8t7nQw2s1c0dQ6mQHc4mGJp3p8oZr2j2lVg1n2tq0dS9q8w0bC4m0m6V0c4Wgk1gO6dEwq0kGm7nGqgV4d7kQmWv0fKp7r5d0c0v0oW1y4Jqf6m3nA5Yp0p0cXcX8o0Q0y7c9mPjGQv7bq6v1G2v0v4qg2o0b1m0k8oG0gk3m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0g0m0h8A9kqv0c3o8QAAAABJRU5ErkJggg==",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
