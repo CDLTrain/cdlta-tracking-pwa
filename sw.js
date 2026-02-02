@@ -7,7 +7,7 @@ const ASSETS = [
   "./idb.js",
   "./manifest.webmanifest",
   // Cache scanner lib once fetched
-  "https://unpkg.com/html5-qrcode@2.3.10/html5-qrcode.min.js",
+  "./html5-qrcode.min.js",
 ];
 
 self.addEventListener("install", (event) => {
@@ -49,3 +49,4 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
+
