@@ -236,9 +236,12 @@
       const url = `${base}?route=transactions`;
       const body = JSON.stringify({ transactions: queued });
 
+      // IMPORTANT:
+      // Avoid CORS preflight (OPTIONS) by NOT using application/json.
+      // Apps Script can still read e.postData.contents as a string.
       const res = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
         body,
       });
 
@@ -337,18 +340,27 @@
   async function startScanner() {
     if (scanner) return;
 
+    // Make failures obvious (instead of silent)
+    const Supported = window.Html5QrcodeSupportedFormats;
+    if (!window.Html5Qrcode || !Supported) {
+      alert(
+        "Scanner library is not loaded. If you’re offline or the PWA cache is stale, the camera scanner won’t start.\n\nFix: host html5-qrcode locally in your repo and clear site storage."
+      );
+      return;
+    }
+
     // html5-qrcode config: attempt to support QR + 1D barcodes
     const formats = [
       // QR
-      Html5QrcodeSupportedFormats.QR_CODE,
+      Supported.QR_CODE,
       // Common 1D barcodes
-      Html5QrcodeSupportedFormats.CODE_128,
-      Html5QrcodeSupportedFormats.CODE_39,
-      Html5QrcodeSupportedFormats.EAN_13,
-      Html5QrcodeSupportedFormats.EAN_8,
-      Html5QrcodeSupportedFormats.UPC_A,
-      Html5QrcodeSupportedFormats.UPC_E,
-      Html5QrcodeSupportedFormats.ITF,
+      Supported.CODE_128,
+      Supported.CODE_39,
+      Supported.EAN_13,
+      Supported.EAN_8,
+      Supported.UPC_A,
+      Supported.UPC_E,
+      Supported.ITF,
     ];
 
     scanner = new Html5Qrcode(readerId);
